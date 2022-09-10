@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/embraer-chair-demo/static/css/main.568d53df.css",
+    "main.css": "/embraer-chair-demo/static/css/main.7cc837f0.css",
     "main.js": "/embraer-chair-demo/static/js/main.3f399185.js",
     "static/js/787.fe540084.chunk.js": "/embraer-chair-demo/static/js/787.fe540084.chunk.js",
     "static/media/Lauderdale_Premium_Arms.png": "/embraer-chair-demo/static/media/Lauderdale_Premium_Arms.be00aefad04075cbf2ff.png",
     "index.html": "/embraer-chair-demo/index.html",
-    "main.568d53df.css.map": "/embraer-chair-demo/static/css/main.568d53df.css.map",
+    "main.7cc837f0.css.map": "/embraer-chair-demo/static/css/main.7cc837f0.css.map",
     "main.3f399185.js.map": "/embraer-chair-demo/static/js/main.3f399185.js.map",
     "787.fe540084.chunk.js.map": "/embraer-chair-demo/static/js/787.fe540084.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.568d53df.css",
+    "static/css/main.7cc837f0.css",
     "static/js/main.3f399185.js"
   ]
 }
