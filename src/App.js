@@ -24,6 +24,7 @@ import MSN from './images/Mist_Standard_No_Arms.png'
 import PSN from './images/Praeterra_Standard_No_Arms.png'
 import SSN from './images/Stellar_Standard_No_Arms.png'
 import TSN from './images/Tribeca_Standard_No_Arms.png'
+import "@fontsource/poppins"
 
 function App() {
   // file name stuff
@@ -66,10 +67,23 @@ function App() {
   return (
     <div className="App">
       <div id='mainPage' style={{ margin: '20px', display: 'flex' }}>
-        <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-          {imageMap[`${style}${version}${trim}`] && <img src={imageMap[`${style}${version}${trim}`]} alt="thingy" style={{ height: '100vh' }}/>}
+        <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', maxHeight: '100vh' }}>
+          {imageMap[`${style}${version}${trim}`] && 
+            <img 
+              src={imageMap[`${style}${version}${trim}`]} 
+              alt="thingy" 
+              style={{ height: 'auto' }}/>}
         </div>
-        <div id='sideBar' style={{ width: 'fit-content', display: 'flex', flexDirection: 'column', maxWidth: '300px' }}>
+        <div 
+          id='sideBar' 
+          style={
+            { 
+              width: 'fit-content',
+              display: 'flex',
+              flexDirection: 'column',
+              maxWidth: '300px',
+              padding: '70px 100px 0px 100px'
+            }}>
           <div id='information'>
             <h3 className='title'>
               PARADIGMA CHAIR
@@ -85,7 +99,11 @@ function App() {
             </div>
           </div>
           <div id='controls'>
-            <div id='style' className={`dropdown ${styleDropdown}`} onClick={() => setStyleDropdown(styleDropdown === 'active' ? '' : 'active')}>
+            <div id='style' 
+              className={`dropdown ${styleDropdown}`} 
+              onClick={() => setStyleDropdown(styleDropdown === 'active' ? '' : 'active')}
+              onMouseLeave={() => setStyleDropdown('')}
+            >
               Style
               <div className={`dropdownlist dropdown_menu--animated`}>
                 <ul>
@@ -107,7 +125,11 @@ function App() {
                   </ul>
               </div>
             </div>
-            <div className={`dropdown ${versionDropdown}`} onClick={() => setVersionDropdown(versionDropdown === 'active' ? '' : 'active')}>
+            <div 
+              className={`dropdown ${versionDropdown}`} 
+              onClick={() => setVersionDropdown(versionDropdown === 'active' ? '' : 'active')}
+              onMouseLeave={() => setVersionDropdown('')}
+              >
               Version
               <div className='dropdownlist'>
                 <ul>
@@ -120,7 +142,11 @@ function App() {
                   </ul>
               </div>
             </div>
-            <div className={`dropdown ${trimDropdown}`} onClick={() => setTrimDropdown(trimDropdown === 'active' ? '' : 'active')}>
+            <div 
+              className={`dropdown ${trimDropdown}`} 
+              onClick={() => setTrimDropdown(trimDropdown === 'active' ? '' : 'active')}
+              onMouseLeave={() => setTrimDropdown('')}
+              >
               Quantity
               <div className='dropdownlist'>
                 <ul>
