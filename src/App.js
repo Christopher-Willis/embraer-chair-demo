@@ -57,13 +57,23 @@ function App() {
     'TribecaStandardNoArms': TSN,
   };
 
-  const [styleDropdown, setStyleDropdown] = useState('')
-  const [versionDropdown, setVersionDropdown] = useState('')
-  const [trimDropdown, setTrimDropdown] = useState('')
+  const [styleDropdown, setStyleDropdown] = useState('');
+  const [versionDropdown, setVersionDropdown] = useState('');
+  const [trimDropdown, setTrimDropdown] = useState('');
+  const [quantity, setQuantity] = useState('1');
+  const [paymentScreen, setPaymentScreen] = useState(false); 
 
   useEffect(() => {
     document.title = "Demo Page";  
   }, []);
+
+  const handleOnChange = (e) => {
+    setQuantity(e.target.value )
+  }
+
+  const totalCost = () => {
+    return quantity * (25000 + (trim === 'Arms' ? 500 : 0) + (version === 'Premium' ? 5000 : 0))
+  }
 
   return (
     <div className="App">
@@ -97,6 +107,9 @@ function App() {
               padding: '70px 100px 0px 100px'
             }}>
           <div id='information'>
+            {paymentScreen && (
+              <p className='arrowDaddy' onClick={() => setPaymentScreen(false)}><i class="arrow up"></i>{`  Return to Customizer`}</p>
+            )}
             <h3 className='title'>
               PARADIGMA CHAIR
             </h3>
@@ -104,13 +117,25 @@ function App() {
             The {style} {version} {trim ==='NoArms' ? '' : 'with arms'} features an anodized aluminum base with a cross-stitched 
             leather seat and graphene-reinforced carbon fiber backing.
             </div>
-            <div class='infoBoxSmall'>
-              Cost - {`${style} ${version} ${trim}`} 
-            </div>
+            { !paymentScreen && (
+              <div class='infoBoxSmall'>
+                Cost - {`${style} ${version} ${trim}`} 
+              </div>
+            )}
+
             <div class='infoBoxSmall'>
                 Estimated Delivery
             </div>
+            { paymentScreen && (
+            <div class='infoBoxSmall'>
+              <span style={{ fontWeight: '700' }}>Order SUMMERY</span>
+              <p> {`${quantity} ${style} ${trim === 'Premium' ? 'PREM' : 'STD'}: $${totalCost().toLocaleString("en-US")}`.toUpperCase()} </p>
+              <p> {`Shipping/Fright: TBD`.toUpperCase()} </p>
+              <span style={{ fontWeight: '700' }}>DEPOSIT DUE TODAY: {`$${(totalCost()/2).toLocaleString("en-US")}`}</span>
+            </div>
+            )}
           </div>
+          { !paymentScreen && (
           <div id='controls'>
             <div id='style' 
               className={`dropdown ${styleDropdown}`} 
@@ -173,12 +198,25 @@ function App() {
               </div>
             </div>
             <div className='button'>
-              Quantity
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" name="quantity" placeholder="1" onChange={ (e) => handleOnChange(e)} />
             </div>
-            <div className='button'>
+            <div className='button' onClick={() => setPaymentScreen(true)}>
               Continue To Payment
             </div>
           </div>
+          )}
+          {paymentScreen && 
+          (
+          <div id='controls'>
+            <div className='button'>
+              <span style={{ fontWeight: '700' }}>ORDER AGREEMENT</span> 
+            </div>
+            <div className='button'>
+              Pay
+            </div>
+          </div>
+          )}
         </div>
       </div>
     </div>

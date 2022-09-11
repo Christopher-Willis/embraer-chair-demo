@@ -39,6 +39,12 @@ body {
   cursor: pointer;
 }
 
+input {
+  padding: 5px;
+  width: 30px;
+  border:0 
+}
+
 .infoBox {
   text-align: center;
   margin: 5px;
@@ -120,4 +126,21 @@ li:hover {
 
 #img_wrap img.normal {
   height: 33px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.arrowDaddy {
+  cursor: pointer;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }
