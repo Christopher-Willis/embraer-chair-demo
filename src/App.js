@@ -25,6 +25,7 @@ import PSN from './images/Praeterra_Standard_No_Arms.png'
 import SSN from './images/Stellar_Standard_No_Arms.png'
 import TSN from './images/Tribeca_Standard_No_Arms.png'
 import "@fontsource/poppins"
+import logo from './images/logo.png'
 
 function App() {
   // file name stuff
@@ -67,12 +68,24 @@ function App() {
   return (
     <div className="App">
       <div id='mainPage' style={{ margin: '20px', display: 'flex' }}>
-        <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', maxHeight: '100vh' }}>
+        <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', maxHeight: '100vh', position: 'relative' }}>
           {imageMap[`${style}${version}${trim}`] && 
             <img 
               src={imageMap[`${style}${version}${trim}`]} 
               alt="thingy" 
-              style={{ height: 'auto' }}/>}
+              style={{ height: 'auto' }}
+            />}
+            <div id="wrap">
+              <img class="fake" src={logo} />
+              <div id="img_wrap">
+                  <img class="normal" src={logo} />
+              </div>
+            </div>
+            {/* <img  
+              src={logo} 
+              alt="thingy" 
+              style={{ left: '40px', top: '50px', position: 'absolute' }}
+            /> */}
         </div>
         <div 
           id='sideBar' 
@@ -81,7 +94,6 @@ function App() {
               width: 'fit-content',
               display: 'flex',
               flexDirection: 'column',
-              maxWidth: '300px',
               padding: '70px 100px 0px 100px'
             }}>
           <div id='information'>
@@ -89,7 +101,8 @@ function App() {
               PARADIGMA CHAIR
             </h3>
             <div class='infoBox'>
-                Lots of information about the style and other stuff too, Lots of information about the style and other stuff too
+            The {style} {version} {trim ==='NoArms' ? '' : 'with arms'} features an anodized aluminum base with a cross-stitched 
+            leather seat and graphene-reinforced carbon fiber backing.
             </div>
             <div class='infoBoxSmall'>
               Cost - {`${style} ${version} ${trim}`} 
@@ -104,7 +117,7 @@ function App() {
               onClick={() => setStyleDropdown(styleDropdown === 'active' ? '' : 'active')}
               onMouseLeave={() => setStyleDropdown('')}
             >
-              Style
+              {style}
               <div className={`dropdownlist dropdown_menu--animated`}>
                 <ul>
                     <li onClick={() => setStyle('Lauderdale')}>
@@ -130,7 +143,7 @@ function App() {
               onClick={() => setVersionDropdown(versionDropdown === 'active' ? '' : 'active')}
               onMouseLeave={() => setVersionDropdown('')}
               >
-              Version
+              {version}
               <div className='dropdownlist'>
                 <ul>
                     <li onClick={() => setVersion('Premium')}>
@@ -147,7 +160,7 @@ function App() {
               onClick={() => setTrimDropdown(trimDropdown === 'active' ? '' : 'active')}
               onMouseLeave={() => setTrimDropdown('')}
               >
-              Quantity
+              {trim}
               <div className='dropdownlist'>
                 <ul>
                     <li onClick={() => setTrim('Arms')}>
@@ -158,6 +171,9 @@ function App() {
                     </li>
                   </ul>
               </div>
+            </div>
+            <div className='button'>
+              Quantity
             </div>
             <div className='button'>
               Continue To Payment

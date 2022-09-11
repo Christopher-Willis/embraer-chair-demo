@@ -1,6 +1,7 @@
 body {
   font-family: "Poppins";
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .dropdown {
@@ -39,14 +40,12 @@ body {
 }
 
 .infoBox {
-  border: 2px solid black;
   text-align: center;
   margin: 5px;
   padding: 20px;
 }
 
 .infoBoxSmall {
-  border: 2px solid black;
   text-align: center;
   margin: 20px;
   padding: 5px;
@@ -54,7 +53,7 @@ body {
 
 .title {
   text-align: center;
-  font-weight: 500;
+  font-weight:bold;
   font-size: 19px;
 }
 
@@ -88,12 +87,37 @@ ul {
   margin: 0px;
  }
 
- li:hover {
+li:hover {
   background-color: white;
- }
+}
 
  /* .dropdown_menu--animated {
 
  } */ 
 
  /* trigger rebuild */
+
+#wrap {
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+
+#wrap img.fake {
+  float: left;
+  visibility: hidden;
+  width: auto;
+}
+
+#img_wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#img_wrap img.normal {
+  height: 33px;
+}
