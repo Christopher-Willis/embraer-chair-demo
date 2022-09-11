@@ -17,7 +17,13 @@
   right: 4px;
   z-index: 5;
   background-color: wheat;
+  display: none;
 }
+
+.dropdown.active .dropdownlist{
+  display:block
+}
+
 
 .button {
   border: 2px solid black;
@@ -79,3 +85,7 @@ ul {
  li:hover {
   background-color: white;
  }
+
+ /* .dropdown_menu--animated {
+
+ } */
