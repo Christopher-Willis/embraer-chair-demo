@@ -77,15 +77,16 @@ function App() {
 
   return (
     <div className="App">
-      <div id='mainPage' style={{ margin: '20px', display: 'flex', maxHeight: '90vh' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', flexShrink: 1 }}>
+      <div id='mainPage' style={{ marginLeft: '20px', marginRight: '50px', display: 'flex', maxHeight: '100vh', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', minWidth: 0, alignItems: 'center', flexGrow: 1 }}>
           {imageMap[`${style}${version}${trim}`] && 
             <img 
               src={imageMap[`${style}${version}${trim}`]} 
               alt="thingy" 
               style={{ 
-                width: 'auto',
-                height: 'auto'
+                maxWidth: '100%',
+                height: 'fit-content',
+                maxHeight: '100%'
               }}
             />}
             <div id="wrap">
@@ -106,10 +107,11 @@ function App() {
             { 
               width: '320px',
               display: 'flex',
-              flexGrow: '1',
               flexDirection: 'column',
-              padding: '50px 50px 0px 50px',
-              alignItems: 'center'
+              // margin: '50px 50px 0px 50px',
+              alignItems: 'center',
+              overflow: 'scroll',
+              flexShrink: 0
             }}>
           <div id='information'>
             {paymentScreen && (
