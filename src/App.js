@@ -57,7 +57,6 @@ function App() {
     'TribecaStandardNoArms': TSN,
   };
 
-  const [styleDropdown, setStyleDropdown] = useState('');
   const [quantity, setQuantity] = useState('1');
   const [paymentScreen, setPaymentScreen] = useState(false); 
 
@@ -66,7 +65,11 @@ function App() {
   }, []);
 
   const handleOnChange = (e) => {
-    setQuantity(e.target.value )
+    setQuantity(e.target.value);
+  }
+
+  const handleDropDownChange = (e) => {
+    setStyle(e.target.value)
   }
 
   const totalCost = () => {
@@ -141,31 +144,14 @@ function App() {
           </div>
           { !paymentScreen && (
           <div id='controls'>
-            <div id='style' 
-              className={`dropdown ${styleDropdown}`} 
-              onClick={() => setStyleDropdown(styleDropdown === 'active' ? '' : 'active')}
-              onMouseLeave={() => setStyleDropdown('')}
-            >
-              {style}
-              <div className={`dropdownlist dropdown_menu--animated`}>
-                <ul>
-                    <li onClick={() => setStyle('Lauderdale')}>
-                      Lauderdale
-                    </li>
-                    <li onClick={() => setStyle('Mist')}>
-                      Mist
-                    </li>
-                    <li onClick={() => setStyle('Praeterra')}>
-                      Praeterra
-                    </li>
-                    <li onClick={() => setStyle('Stellar')}>
-                      Stellar
-                    </li>
-                    <li onClick={() => setStyle('Tribeca')}>
-                      Tribeca
-                    </li>
-                  </ul>
-              </div>
+            <div style={{ width: '100%' }}>
+              <select onChange={(e) => handleDropDownChange(e)} name="style" id="style">
+                <option value="Lauderdale">Lauderdale</option>
+                <option value="Mist">Mist</option>
+                <option value="Praeterra">Praeterra</option>
+                <option value="Stellar">Stellar</option>
+                <option value="Tribeca">Tribeca</option>
+              </select>
             </div>
             <div className='toggleWrapper'>
               <div className={`toggleItem ${version === 'Premium' ? 'active' : ''}`} onClick={() => setVersion('Premium')}>
