@@ -58,8 +58,6 @@ function App() {
   };
 
   const [styleDropdown, setStyleDropdown] = useState('');
-  const [versionDropdown, setVersionDropdown] = useState('');
-  const [trimDropdown, setTrimDropdown] = useState('');
   const [quantity, setQuantity] = useState('1');
   const [paymentScreen, setPaymentScreen] = useState(false); 
 
@@ -169,38 +167,20 @@ function App() {
                   </ul>
               </div>
             </div>
-            <div 
-              className={`dropdown ${versionDropdown}`} 
-              onClick={() => setVersionDropdown(versionDropdown === 'active' ? '' : 'active')}
-              onMouseLeave={() => setVersionDropdown('')}
-              >
-              {version}
-              <div className='dropdownlist'>
-                <ul>
-                    <li onClick={() => setVersion('Premium')}>
-                      Premium
-                    </li>
-                    <li onClick={() => setVersion('Standard')}>
-                      Standard
-                    </li>
-                  </ul>
+            <div className='toggleWrapper'>
+              <div className={`toggleItem ${version === 'Premium' ? 'active' : ''}`} onClick={() => setVersion('Premium')}>
+                Premium
+              </div>
+              <div className={`toggleItem ${version === 'Standard' ? 'active' : ''}`} onClick={() => setVersion('Standard')}>
+                Standard
               </div>
             </div>
-            <div 
-              className={`dropdown ${trimDropdown}`} 
-              onClick={() => setTrimDropdown(trimDropdown === 'active' ? '' : 'active')}
-              onMouseLeave={() => setTrimDropdown('')}
-              >
-              {trim}
-              <div className='dropdownlist'>
-                <ul>
-                    <li onClick={() => setTrim('Arms')}>
-                      Arms
-                    </li>
-                    <li onClick={() => setTrim('NoArms')}>
-                      No Arms
-                    </li>
-                  </ul>
+            <div className='toggleWrapper'>
+              <div className={`toggleItem ${trim === 'Arms' ? 'active' : ''}`} onClick={() => setTrim('Arms')}>
+                Arms
+              </div>
+              <div className={`toggleItem ${trim === 'NoArms' ? 'active' : ''}`} onClick={() => setTrim('NoArms')}>
+                No Arms
               </div>
             </div>
             <div className='button'>

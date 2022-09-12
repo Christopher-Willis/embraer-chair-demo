@@ -12,6 +12,7 @@ body {
   width: 316px;
   cursor: pointer;
   position: relative;
+  border-radius: 4px;
 }
 
 .dropdownlist{
@@ -39,6 +40,30 @@ body {
   padding: 5px 0px;
   width: 316px;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.toggleWrapper {
+  text-align: center;
+  margin: 20px 0px;
+  padding: 5px 5px;
+  width: 310px;
+  cursor: pointer;
+  background-color: rgb(244, 244, 244);
+  display: flex;
+  border-radius: 4px
+}
+
+.toggleItem {
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 5px 0px;
+}
+
+.toggleItem.active {
+  background-color: white;
 }
 
 input {
