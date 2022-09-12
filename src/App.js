@@ -77,13 +77,16 @@ function App() {
 
   return (
     <div className="App">
-      <div id='mainPage' style={{ margin: '20px', display: 'flex' }}>
-        <div style={{ flexGrow: 1, display: 'flex', justifyContent: 'center', maxHeight: '100vh', position: 'relative' }}>
+      <div id='mainPage' style={{ margin: '20px', display: 'flex', maxHeight: '90vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative', flexShrink: 1 }}>
           {imageMap[`${style}${version}${trim}`] && 
             <img 
               src={imageMap[`${style}${version}${trim}`]} 
               alt="thingy" 
-              style={{ height: 'auto' }}
+              style={{ 
+                width: 'auto',
+                height: 'auto'
+              }}
             />}
             <div id="wrap">
               <img class="fake" src={logo} />
@@ -101,10 +104,12 @@ function App() {
           id='sideBar' 
           style={
             { 
-              width: 'fit-content',
+              width: '320px',
               display: 'flex',
+              flexGrow: '1',
               flexDirection: 'column',
-              padding: '70px 100px 0px 100px'
+              padding: '50px 100px 0px 50px',
+              alignItems: 'center'
             }}>
           <div id='information'>
             {paymentScreen && (
@@ -113,19 +118,18 @@ function App() {
             <h3 className='title'>
               PARADIGMA CHAIR
             </h3>
+            <div class='infoBoxSmall'>
+              Est. Delivery: Dec 2022
+            </div>
             <div class='infoBox'>
             The {style} {version} {trim ==='NoArms' ? '' : 'with arms'} features an anodized aluminum base with a cross-stitched 
             leather seat and graphene-reinforced carbon fiber backing.
             </div>
             { !paymentScreen && (
               <div class='infoBoxSmall'>
-                Cost - {`${style} ${version} ${trim}`} 
+                Cost - {`$${totalCost().toLocaleString("en-US")}*`}
               </div>
             )}
-
-            <div class='infoBoxSmall'>
-                Estimated Delivery
-            </div>
             { paymentScreen && (
             <div class='infoBoxSmall'>
               <span style={{ fontWeight: '700' }}>Order SUMMERY</span>
