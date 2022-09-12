@@ -108,7 +108,7 @@ function App() {
               display: 'flex',
               flexGrow: '1',
               flexDirection: 'column',
-              padding: '50px 100px 0px 50px',
+              padding: '50px 50px 0px 50px',
               alignItems: 'center'
             }}>
           <div id='information'>
