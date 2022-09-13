@@ -118,11 +118,11 @@ function App() {
             {paymentScreen && (
               <>
                 <p className='arrowDaddy' onClick={() => setPaymentScreen(false)}>
-                  <div style={{ width: '25px', height: '25px', backgroundColor: '#f2f2f2', display: 'relative', borderRadius: '4px' }} >
+                  <div style={{ width: '20px', height: '20px', backgroundColor: '#f2f2f2', display: 'relative', borderRadius: '4px' }} >
                     <i class="arrow up"></i>
                   </div>
                 </p>
-                <p onClick={() => setPaymentScreen(false)} style={{ position: 'absolute', left: '35px', top: '7px', cursor: 'pointer' }}>
+                <p onClick={() => setPaymentScreen(false)} style={{ position: 'absolute', left: '30px', top: '5px', cursor: 'pointer' }}>
                   Edit Selection
                 </p>
               </>
@@ -164,6 +164,7 @@ function App() {
           { !paymentScreen && (
           <div id='controls'>
             <div className='select-wrapper' style={{ width: '100%' }}>
+              <label>Style</label>
               <select className='minimal' onChange={(e) => handleDropDownChange(e)} name="style" id="style">
                 <option value="Lauderdale">Lauderdale</option>
                 <option value="Mist">Mist</option>
