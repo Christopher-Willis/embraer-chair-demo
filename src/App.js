@@ -72,6 +72,10 @@ function App() {
     setStyle(e.target.value)
   }
 
+  const handleQuantityChange = (e) => {
+    setQuantity(e.target.value)
+  }
+
   const totalCost = () => {
     return quantity * (25000 + (trim === 'Arms' ? 500 : 0) + (version === 'Premium' ? 5000 : 0))
   }
@@ -169,9 +173,19 @@ function App() {
                 No Arms
               </div>
             </div>
-            <div className='button'>
-              <label for="quantity">Quantity</label>
-              <input type="number" id="quantity" name="quantity" placeholder="1" onChange={ (e) => handleOnChange(e)} />
+            <div style={{ width: '100%' }}>
+              <select onChange={(e) => handleQuantityChange(e)} name="quantity" id="quantity">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+              </select>                            
             </div>
             <div className='button' onClick={() => setPaymentScreen(true)}>
               Continue To Payment
