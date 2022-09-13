@@ -115,14 +115,14 @@ function App() {
               flexDirection: 'column',
               // margin: '50px 50px 0px 50px',
               alignItems: 'center',
-              overflow: 'scroll',
+              overflowY: 'scroll',
               flexShrink: 0
             }}>
           <div id='information' style={{ position: 'relative'}}>
             {paymentScreen && (
               <>
                 <p className='arrowDaddy' onClick={() => setPaymentScreen(false)}>
-                  <div style={{ width: '25px', height: '25px', backgroundColor: '#9fa0a4', display: 'relative' }} >
+                  <div style={{ width: '25px', height: '25px', backgroundColor: '#f2f2f2', display: 'relative', borderRadius: '4px' }} >
                     <i class="arrow up"></i>
                   </div>
                 </p>
