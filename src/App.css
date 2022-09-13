@@ -169,12 +169,12 @@ li:hover {
 
 .arrow {
   border: solid black;
-  border-width: 0 2px 2px 0;
+  border-width: 0 1px 1px 0;
   display: inline-block;
-  padding: 4px;
+  padding: 2.5px;
   cursor: pointer;
-  margin-left: 7px;
-  margin-top: 10px;
+  margin-left: 9px;
+  margin-top: 11px;
 }
 
 .arrowDaddy {
@@ -232,7 +232,7 @@ select.minimal {
 
 .summary {
   text-align: left;
-  margin: 15px 20px 0px 20px;
+  margin: 45px 20px 0px 20px;
   width: '320px';
 }
 
@@ -240,9 +240,8 @@ select.minimal {
   height: 23px;
 }
 
-.summary div:last-child {
-  height: 23px;
-  padding: 10px 0px;
+hr {
+  margin-top: 20px;
 }
 
 @media (max-width: 1000px) {

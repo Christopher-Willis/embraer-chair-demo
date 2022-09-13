@@ -153,6 +153,7 @@ function App() {
                 <p> {`Shipping / Freight `} </p>
                 <p> {`TBD`}</p>
               </div>
+              <hr/>
               <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                 <p style={{ fontWeight: '700' }}>DEPOSIT DUE TODAY</p>
                 <p style={{ fontWeight: '700' }}>{`$${(totalCost()/2).toLocaleString("en-US")}`}</p>
@@ -205,16 +206,19 @@ function App() {
             <div className='button payment' onClick={() => setPaymentScreen(true)}>
               Continue To Payment
             </div>
+            <div style={{ textAlign: 'left' }} className='infoBoxSmall'>
+              *Cost exclusive of shipping
+            </div>
           </div>
           )}
           {paymentScreen && 
           (
           <div >
-            <div className='button'>
-              <span style={{ fontWeight: '700' }}>ORDER AGREEMENT</span> 
+            <div className='infoBoxSmall'>
+              <a href=''>ORDER AGREEMENT</a> 
             </div>
-            <div className='button'>
-              Pay
+            <div className='button payment'>
+              Pay with Card
             </div>
           </div>
           )}
