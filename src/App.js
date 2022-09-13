@@ -174,6 +174,7 @@ function App() {
               </div>
             </div>
             <div style={{ width: '100%' }}>
+              <label>Quantity</label>
               <select onChange={(e) => handleQuantityChange(e)} name="quantity" id="quantity">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -187,7 +188,7 @@ function App() {
                   <option value="10">10</option>
               </select>                            
             </div>
-            <div className='button' onClick={() => setPaymentScreen(true)}>
+            <div className='button payment' onClick={() => setPaymentScreen(true)}>
               Continue To Payment
             </div>
           </div>

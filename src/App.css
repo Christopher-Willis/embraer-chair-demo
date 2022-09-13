@@ -97,6 +97,12 @@ input {
   font-size: 24px;
 }
 
+label {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+}
+
 select {
   outline: 0;
   background-image: none;
@@ -110,6 +116,7 @@ select {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 14px;
+  background-color: #9fa0a4;
 }
 
 .select {
@@ -183,4 +190,18 @@ li:hover {
 
 .arrowDaddy {
   padding-left: 5px;
+}
+
+.payment {
+  background-color: #3e6ae1;
+  color: white;
+}
+
+.payment:hover {
+  background-color: #3457b1;
+}
+@media screen and (max-width: 1000px) {
+  body {
+    background-color: #3d6ae0;
+  }
 }
