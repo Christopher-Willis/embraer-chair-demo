@@ -195,7 +195,7 @@ function App() {
           )}
           {paymentScreen && 
           (
-          <div id='controls'>
+          <div >
             <div className='button'>
               <span style={{ fontWeight: '700' }}>ORDER AGREEMENT</span> 
             </div>

@@ -79,7 +79,7 @@ input {
 
 .infoBox {
   text-align: left;
-  margin: 20px 20px;
+  margin: 10px 20px;
   padding: 5px 0px;
   width: auto;
   font-weight: 700;
@@ -87,7 +87,7 @@ input {
 
 .infoBoxSmall {
   text-align: center;
-  margin: 20px 0px;
+  margin: 10px 0px;
   padding: 5px 0px;
   width: 320px;
 }
@@ -97,6 +97,10 @@ input {
   font-weight:bold;
   font-size: 27px;
   padding-top: 50px;
+}
+
+#controls {
+  margin-top: 20px;
 }
 
 label {
@@ -220,8 +224,8 @@ select.minimal {
 .payment:hover {
   background-color: #3457b1;
 }
-/* @media only screen and (min-width: 768px) {
-body {
-    background-color: #3d6ae0;
+@media (max-width: 1000px) {
+  #mainPage {
+    flex-direction: column;
   }
-} */
+} 
