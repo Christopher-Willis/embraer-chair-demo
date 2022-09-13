@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/embraer-chair-demo/static/css/main.9a0bc203.css",
-    "main.js": "/embraer-chair-demo/static/js/main.9fb30ad2.js",
+    "main.css": "/embraer-chair-demo/static/css/main.e1cd8bb8.css",
+    "main.js": "/embraer-chair-demo/static/js/main.8198ac00.js",
     "static/js/787.fe540084.chunk.js": "/embraer-chair-demo/static/js/787.fe540084.chunk.js",
     "static/media/Mist_Premium_No_Arms.png": "/embraer-chair-demo/static/media/Mist_Premium_No_Arms.35bdfb98f549444a9790.png",
     "static/media/Mist_Premium_Arms.png": "/embraer-chair-demo/static/media/Mist_Premium_Arms.e583c866d53addd21b32.png",
@@ -28,12 +28,12 @@
     "static/media/poppins-latin-400-normal.woff2": "/embraer-chair-demo/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
     "static/media/poppins-latin-ext-400-normal.woff2": "/embraer-chair-demo/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/embraer-chair-demo/index.html",
-    "main.9a0bc203.css.map": "/embraer-chair-demo/static/css/main.9a0bc203.css.map",
-    "main.9fb30ad2.js.map": "/embraer-chair-demo/static/js/main.9fb30ad2.js.map",
+    "main.e1cd8bb8.css.map": "/embraer-chair-demo/static/css/main.e1cd8bb8.css.map",
+    "main.8198ac00.js.map": "/embraer-chair-demo/static/js/main.8198ac00.js.map",
     "787.fe540084.chunk.js.map": "/embraer-chair-demo/static/js/787.fe540084.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a0bc203.css",
-    "static/js/main.9fb30ad2.js"
+    "static/css/main.e1cd8bb8.css",
+    "static/js/main.8198ac00.js"
   ]
 }

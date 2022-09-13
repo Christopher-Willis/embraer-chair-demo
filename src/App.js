@@ -148,8 +148,8 @@ function App() {
           </div>
           { !paymentScreen && (
           <div id='controls'>
-            <div style={{ width: '100%' }}>
-              <select onChange={(e) => handleDropDownChange(e)} name="style" id="style">
+            <div className='select-wrapper' style={{ width: '100%' }}>
+              <select className='minimal' onChange={(e) => handleDropDownChange(e)} name="style" id="style">
                 <option value="Lauderdale">Lauderdale</option>
                 <option value="Mist">Mist</option>
                 <option value="Praeterra">Praeterra</option>
@@ -173,9 +173,9 @@ function App() {
                 No Arms
               </div>
             </div>
-            <div style={{ width: '100%' }}>
+            <div className='select-wrapper' style={{ width: '100%' }}>
               <label>Quantity</label>
-              <select onChange={(e) => handleQuantityChange(e)} name="quantity" id="quantity">
+              <select className='minimal' onChange={(e) => handleQuantityChange(e)} name="quantity" id="quantity">
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
