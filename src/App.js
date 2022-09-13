@@ -118,7 +118,7 @@ function App() {
               overflow: 'scroll',
               flexShrink: 0
             }}>
-          <div id='information'>
+          <div id='information' style={{ position: 'relative'}}>
             {paymentScreen && (
               <p className='arrowDaddy' onClick={() => setPaymentScreen(false)}><i class="arrow up"></i>{`  Return to Customizer`}</p>
             )}
