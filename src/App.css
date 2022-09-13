@@ -95,8 +95,9 @@ input {
 .title {
   text-align: center;
   font-weight:bold;
-  font-size: 27px;
+  font-size: 29px;
   padding-top: 50px;
+  margin-bottom: 15px;
 }
 
 #controls {
@@ -115,7 +116,7 @@ select {
   background-image: none;
   width: 100%;
   height: 100%;
-  padding: 5px 5px;
+  padding: 5px 8px;
   color: black;
   cursor: pointer;
   border: 2px solid #9fa0a4;;
@@ -168,12 +169,12 @@ li:hover {
 
 .arrow {
   border: solid black;
-  border-width: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
   display: inline-block;
-  padding: 5px;
+  padding: 4px;
   cursor: pointer;
-  margin-left: 6px;
-  margin-top: 9px;
+  margin-left: 7px;
+  margin-top: 10px;
 }
 
 .arrowDaddy {
@@ -229,17 +230,17 @@ select.minimal {
   background-color: #3457b1;
 }
 
-.summery {
+.summary {
   text-align: left;
-  margin: 0px 20px;
+  margin: 15px 20px 0px 20px;
   width: '320px';
 }
 
-.summery div {
+.summary div {
   height: 23px;
 }
 
-.summery div:last-child {
+.summary div:last-child {
   height: 23px;
   padding: 10px 0px;
 }

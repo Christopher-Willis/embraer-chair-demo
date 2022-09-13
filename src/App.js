@@ -64,10 +64,6 @@ function App() {
     document.title = "Demo Page";  
   }, []);
 
-  const handleOnChange = (e) => {
-    setQuantity(e.target.value);
-  }
-
   const handleDropDownChange = (e) => {
     setStyle(e.target.value)
   }
@@ -126,8 +122,8 @@ function App() {
                     <i class="arrow up"></i>
                   </div>
                 </p>
-                <p style={{ position: 'absolute', left: '35px', top: '7px'}}>
-                  {`Return to Customizer`}
+                <p onClick={() => setPaymentScreen(false)} style={{ position: 'absolute', left: '35px', top: '7px', cursor: 'pointer' }}>
+                  Edit Selection
                 </p>
               </>
             )}
@@ -147,8 +143,8 @@ function App() {
               </div>
             )}
             { paymentScreen && (
-            <div class='summery'>
-              <span style={{ fontWeight: '700' }}>SUMMERY</span>
+            <div class='summary'>
+              <span style={{ fontWeight: '700' }}>SUMMARY</span>
               <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                 <p> {`${quantity} ${style} ${trim === 'Premium' ? 'PREM' : 'STD'}`} </p>
                 <p> {`$${totalCost().toLocaleString("en-US")}`}</p>
