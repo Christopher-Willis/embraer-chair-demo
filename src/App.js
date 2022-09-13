@@ -120,7 +120,16 @@ function App() {
             }}>
           <div id='information' style={{ position: 'relative'}}>
             {paymentScreen && (
-              <p className='arrowDaddy' onClick={() => setPaymentScreen(false)}><i class="arrow up"></i>{`  Return to Customizer`}</p>
+              <>
+                <p className='arrowDaddy' onClick={() => setPaymentScreen(false)}>
+                  <div style={{ width: '25px', height: '25px', backgroundColor: '#9fa0a4', display: 'relative' }} >
+                    <i class="arrow up"></i>
+                  </div>
+                </p>
+                <p style={{ position: 'absolute', left: '35px', top: '7px'}}>
+                  {`Return to Customizer`}
+                </p>
+              </>
             )}
             <h3 className='title'>
               PARADIGMA CHAIR
@@ -138,11 +147,20 @@ function App() {
               </div>
             )}
             { paymentScreen && (
-            <div class='infoBoxSmall'>
-              <span style={{ fontWeight: '700' }}>Order SUMMERY</span>
-              <p> {`${quantity} ${style} ${trim === 'Premium' ? 'PREM' : 'STD'}: $${totalCost().toLocaleString("en-US")}`.toUpperCase()} </p>
-              <p> {`Shipping/Fright: TBD`.toUpperCase()} </p>
-              <span style={{ fontWeight: '700' }}>DEPOSIT DUE TODAY: {`$${(totalCost()/2).toLocaleString("en-US")}`}</span>
+            <div class='summery'>
+              <span style={{ fontWeight: '700' }}>SUMMERY</span>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                <p> {`${quantity} ${style} ${trim === 'Premium' ? 'PREM' : 'STD'}`} </p>
+                <p> {`$${totalCost().toLocaleString("en-US")}`}</p>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                <p> {`Shipping / Freight `} </p>
+                <p> {`TBD`}</p>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                <p style={{ fontWeight: '700' }}>DEPOSIT DUE TODAY</p>
+                <p style={{ fontWeight: '700' }}>{`$${(totalCost()/2).toLocaleString("en-US")}`}</p>
+              </div>
             </div>
             )}
           </div>
