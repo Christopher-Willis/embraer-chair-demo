@@ -69,8 +69,8 @@ body {
 
 input {
   padding: 5px;
-  width: 30px;
-  border:0 
+  margin-left: 5px;
+  flex-grow: 1;
 }
 
 #information {
@@ -249,8 +249,29 @@ hr {
   margin-bottom: 5px;
 }
 
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  padding-top: 5em;
+}
+
+.inputContainer {
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+}
+
 @media (max-width: 1000px) {
   #mainPage {
     flex-direction: column;
+  }
+  .sideBar {
+    align-self: center;
   }
 } 

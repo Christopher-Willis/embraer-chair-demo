@@ -58,7 +58,8 @@ function App() {
   };
 
   const [quantity, setQuantity] = useState('1');
-  const [paymentScreen, setPaymentScreen] = useState(false); 
+  const [paymentScreen, setPaymentScreen] = useState(false);
+  const [modalOpen, setModal] = useState(false);
 
   useEffect(() => {
     document.title = "Demo Page";  
@@ -218,12 +219,52 @@ function App() {
             <div className='infoBoxSmall'>
               <a href=''>ORDER AGREEMENT</a> 
             </div>
-            <div className='button payment'>
+            <div className='button payment' onClick={() => setModal(true)} >
               Pay with Card
             </div>
           </div>
           )}
         </div>
+        {modalOpen && (
+          <div className='modal'>
+            <div className='modalContents' style={{ backgroundColor: 'white', height: 'fit-content', minWidth: '500px', display: 'flex', alignItems: 'center', flexDirection: 'column', paddingTop: '2em' }}>
+              <div className='orderForm' style={{ maxWidth: '400px'}}>
+                <div className='inputContainer'>
+                  <label for="name">Full Name:</label>
+                  <input type="text" id="name" name="name" style={{ width: 'auto'}} />
+                </div>
+                <div className='inputContainer'>
+                  <label for="billingAddress">Billing Address:</label>
+                  <input type="text" id="billingAddress" name="billingAddress" style={{ width: 'auto'}} />
+                </div>
+                <div className='inputContainer'>
+                  <label for="shippingAddress">Shipping Address:</label>
+                  <input type="text" id="shippingAddress" name="shippingAddress" style={{ width: 'auto'}} />
+                </div>
+                <div className='inputContainer'>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" style={{ width: 'auto'}} />
+                </div>
+                <div style={{ textAlign: 'left', padding: '20px 10px 0 10px', minWidth: '320'}}>
+                  <span style={{ fontWeight: '700' }}>SUMMARY</span>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', height: '23px' }}>
+                    <p> {`${quantity} ${style} ${trim === 'Premium' ? 'PREM' : 'STD'}`} </p>
+                    <p> {`$${totalCost().toLocaleString("en-US")}`}</p>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', height: '23px' }}>
+                    <p> {`Shipping / Freight `} </p>
+                    <p> {`TBD`}</p>
+                  </div>
+                  <hr/>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                    <p style={{ fontWeight: '700' }}>DEPOSIT DUE TODAY</p>
+                    <p style={{ fontWeight: '700' }}>{`$${(totalCost()/2).toLocaleString("en-US")}`}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
