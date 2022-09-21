@@ -74,7 +74,7 @@ function App() {
   }
 
   const totalCost = () => {
-    return quantity * (25000 + (trim === 'Arms' ? 500 : 0) + (version === 'Premium' ? 5000 : 0))
+    return quantity * (25000 + (trim === 'Arms' ? 0 : 0) + (version === 'Premium' ? 10000 : 0))
   }
 
   return (
@@ -88,7 +88,8 @@ function App() {
               style={{ 
                 maxWidth: '100%',
                 height: 'fit-content',
-                maxHeight: '100%'
+                maxHeight: '100%',
+                marginTop: '-40px'
               }}
             />}
             <div id="wrap">
@@ -205,8 +206,8 @@ function App() {
                   <option value="10">10</option>
               </select>                            
             </div>
-            <div className='button payment' onClick={() => setPaymentScreen(true)}>
-              Continue To Payment
+            <div className='button payment' onClick={() => setModal(true)}>
+              Continue to Order Form
             </div>
             <div style={{ textAlign: 'left' }} className='infoBoxSmall'>
               *Cost exclusive of shipping
@@ -227,25 +228,35 @@ function App() {
         </div>
         {modalOpen && (
           <div className='modal'>
-            <div className='modalContents' style={{ backgroundColor: 'white', height: 'fit-content', minWidth: '500px', display: 'flex', alignItems: 'center', flexDirection: 'column', paddingTop: '2em' }}>
-              <div className='orderForm' style={{ maxWidth: '400px'}}>
-                <div className='inputContainer'>
-                  <label for="name">Full Name:</label>
-                  <input type="text" id="name" name="name" style={{ width: 'auto'}} />
+            <div 
+              className='modalContents' 
+              style={{ 
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                height: 'fit-content', minWidth: '300px', 
+                display: 'flex', alignItems: 'center', 
+                flexDirection: 'column', 
+                padding: '2em', 
+                position: 'relative' ,
+                border: '1px solid black',
+                borderRadius: '4px'
+              }}>
+              <div class="close" onClick={() => setModal(false)} ></div>
+              <p className='arrowDaddy2' onClick={() => setModal(false)}>
+                <div style={{ width: '20px', height: '20px', backgroundColor: '#f2f2f2', display: 'relative', borderRadius: '4px' }} >
+                  <i class="arrow up"></i>
                 </div>
-                <div className='inputContainer'>
-                  <label for="billingAddress">Billing Address:</label>
-                  <input type="text" id="billingAddress" name="billingAddress" style={{ width: 'auto'}} />
-                </div>
-                <div className='inputContainer'>
-                  <label for="shippingAddress">Shipping Address:</label>
-                  <input type="text" id="shippingAddress" name="shippingAddress" style={{ width: 'auto'}} />
-                </div>
-                <div className='inputContainer'>
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" style={{ width: 'auto'}} />
-                </div>
-                <div style={{ textAlign: 'left', padding: '20px 10px 0 10px', minWidth: '320'}}>
+              </p>
+              <p onClick={() => setModal(false)} style={{ position: 'absolute', left: '50px', top: '0px', cursor: 'pointer' }}>
+                Edit Selection
+              </p>
+              <div className='titleSummaryContainer'>
+                <h3 className='title' style={{ paddingTop: '0px', margin: '0px', lineHeight: '1em'}}>
+                  PARADIGMA CHAIR
+                </h3>
+                <h3 className='subTitle' style={{ paddingTop: '0px', marginTop: '0px'}}>
+                  ORDER FORM
+                </h3>
+                <div className='summaryContainer' style={{ textAlign: 'left', padding: '20px 10px 0 0px', minWidth: '320'}}>
                   <span style={{ fontWeight: '700' }}>SUMMARY</span>
                   <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', height: '23px' }}>
                     <p> {`${quantity} ${style} ${trim === 'Premium' ? 'PREM' : 'STD'}`} </p>
@@ -257,10 +268,81 @@ function App() {
                   </div>
                   <hr/>
                   <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                    <p style={{ fontWeight: '700' }}>DEPOSIT DUE TODAY</p>
-                    <p style={{ fontWeight: '700' }}>{`$${(totalCost()/2).toLocaleString("en-US")}`}</p>
+                    <p style={{ fontWeight: '700', marginTop: '5px' }}>DEPOSIT DUE</p>
+                    <p style={{ fontWeight: '700', marginTop: '5px' }}>{`$${(totalCost()/2).toLocaleString("en-US")}`}</p>
                   </div>
                 </div>
+              </div>
+              <div className='addressOuterWrapper'>
+                <div className='addressInnerWrapper'>
+                  <div className='inputContainer'>
+                    <label for="fname">FIRST NAME</label>
+                    <input type="text" id="fname" name="fname" style={{ width: 'auto'}} />
+                  </div>
+                </div>
+                <div className='addressInnerWrapper'>
+                  <div className='inputContainer'>
+                    <label for="lname">LAST NAME</label>
+                    <input type="text" id="lname" name="lname" style={{ width: 'auto'}} />
+                  </div>
+                </div>
+              </div>
+              <div style={{ paddingTop: '0px' }} className='addressOuterWrapper'>
+                <div className='addressInnerWrapper'>
+                  <p>
+                    BILLING ADDRESS
+                  </p>
+                  <div className='inputContainerVert' style={{ width: '100%', display: 'flex', flexDirection: 'column'}}>
+                    <label for="billingStreet"> STREET</label>
+                    <input type="text" id="billingStreet" name="billingStreet" style={{ width: 'auto', margin: '0'}} />
+                  </div>
+                  <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
+                    <div style={{ width: 'calc(50% - 5px)', display: 'flex', flexDirection: 'column'}}>
+                      <label for="billingState"> STATE</label>
+                      <input type="text" id="billingState" name="billingState" style={{ width: 'auto', margin: '0'}} />
+                    </div>
+                    <div style={{ width: 'calc(50% - 5px)', display: 'flex', flexDirection: 'column'}}>
+                      <label for="billingZip"> ZIP</label>
+                      <input type="text" id="billingZip" name="billingZip" style={{ width: 'auto', margin: '0'}} />
+                    </div>
+                  </div>
+                </div>
+                <div className='addressInnerWrapper'>
+                  <p>
+                    SHIPPING ADDRESS
+                  </p>
+                  <div className='inputContainerVert' style={{ width: '100%', display: 'flex', flexDirection: 'column'}}>
+                    <label for="shippingStreet"> STREET</label>
+                    <input type="text" id="shippingStreet" name="shippingStreet" style={{ width: 'auto', margin: '0'}} />
+                  </div>
+                  <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
+                    <div style={{ width: 'calc(50% - 5px)', display: 'flex', flexDirection: 'column'}}>
+                      <label for="shippingState"> STATE</label>
+                      <input type="text" id="shippingState" name="shippingState" style={{ width: 'auto', margin: '0'}} />
+                    </div>
+                    <div style={{ width: 'calc(50% - 5px)', display: 'flex', flexDirection: 'column'}}>
+                      <label for="shippingZip"> ZIP</label>
+                      <input type="text" id="shippingZip" name="shippingZip" style={{ width: 'auto', margin: '0'}} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='addressOuterWrapper'>
+                <div className='addressInnerWrapper'>
+                  <div className='inputContainer'>
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" style={{ width: 'auto'}} />
+                  </div>
+                </div>
+                <div className='addressInnerWrapper'>
+                  <div className='inputContainer'>
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" id="email" name="email" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" style={{ width: 'auto'}} />
+                  </div>
+                </div>
+              </div>
+              <div style={{ alignSelf: 'flex-start'}} className='button payment' onClick={() => setModal(true)}>
+                SUBMIT ORDER
               </div>
             </div>
           </div>

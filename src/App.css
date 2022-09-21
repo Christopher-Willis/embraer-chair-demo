@@ -96,7 +96,7 @@ input {
   text-align: center;
   font-weight:bold;
   font-size: 29px;
-  padding-top: 50px;
+  padding-top: 25px;
   margin-bottom: 15px;
 }
 
@@ -119,7 +119,7 @@ select {
   padding: 5px 8px;
   color: black;
   cursor: pointer;
-  border: 2px solid #9fa0a4;;
+  border: 2px solid #9fa0a4;
   border-radius: 4px;
   font-family: "Poppins";
   font-weight: 400;
@@ -146,7 +146,7 @@ li:hover {
   overflow: hidden;
   position: absolute;
   left: 20px;
-  top: 30px;
+  top: 5px;
 }
 
 #wrap img.fake {
@@ -183,9 +183,15 @@ li:hover {
   left: 0;
   top: 5px;
   width: 100%;
-  
 }
 
+.arrowDaddy2 {
+  cursor: pointer;
+  position: absolute;
+  left: 25px;
+  top: 0px;
+  width: 100%;
+}
 select.minimal {
   background-image:
     linear-gradient(45deg, transparent 50%, gray 50%),
@@ -255,7 +261,7 @@ hr {
   left: 0px;
   height: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.2);
   display: flex;
   justify-content: center;
   padding-top: 5em;
@@ -265,6 +271,73 @@ hr {
   width: 100%;
   margin-top: 1em;
   display: flex;
+}
+
+.inputContainer label{
+  padding-top: 4px;
+}
+
+.inputContainerVert {
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+}
+
+.addressInnerWrapper p {
+  text-decoration: underline;
+}
+
+.closeContainer {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.subTitle {
+  font-weight: bolder;
+  font-size: large;
+}
+
+.titleSummaryContainer {
+  align-self: flex-start;
+  padding-top: 25px;
+}
+
+.addressOuterWrapper {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.addressInnerWrapper {
+  flex-grow: 1;
+  width: 50%;
 }
 
 @media (max-width: 1000px) {
