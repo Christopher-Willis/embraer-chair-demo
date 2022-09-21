@@ -238,7 +238,9 @@ function App() {
                 padding: '2em', 
                 position: 'relative' ,
                 border: '1px solid black',
-                borderRadius: '4px'
+                borderRadius: '4px',
+                height: '80vh',
+                overflowY: 'scroll'
               }}>
               <div class="close" onClick={() => setModal(false)} ></div>
               <p className='arrowDaddy2' onClick={() => setModal(false)}>

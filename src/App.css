@@ -333,11 +333,12 @@ hr {
   display: flex;
   width: 100%;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .addressInnerWrapper {
   flex-grow: 1;
-  width: 50%;
+  min-width: 250px;
 }
 
 @media (max-width: 1000px) {
