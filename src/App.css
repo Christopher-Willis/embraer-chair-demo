@@ -337,7 +337,7 @@ hr {
 }
 
 .addressInnerWrapper {
-  flex-grow: 1;
+  flex: 1 1 0px;
   min-width: 250px;
 }
 
